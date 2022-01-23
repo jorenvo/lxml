@@ -351,10 +351,10 @@ def cmmi(configure_cmd, build_dir, multicore=None, **call_setup):
     else:
         make_jobs = []
     call_subprocess(
-        ['make'] + make_jobs,
+        ['gmake'] + make_jobs,  # JOV libxml2 doesn't build with BSD make
         cwd=build_dir, **call_setup)
     call_subprocess(
-        ['make'] + make_jobs + ['install'],
+        ['gmake'] + make_jobs + ['install'],
         cwd=build_dir, **call_setup)
 
 
