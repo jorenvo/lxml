@@ -216,6 +216,7 @@ def download_libxml2(dest_dir, version=None):
     version_re = re.compile(r'libxml2-([0-9.]+[0-9]).tar.gz')
     filename = 'libxml2-%s.tar.gz'
 
+    version = "2.9.10" # JOV
     if version == "2.9.12":
         # Temporarily using the latest master (2.9.12+) until there is a release that supports lxml again.
         from_location = "https://gitlab.gnome.org/GNOME/libxml2/-/archive/dea91c97debeac7c1aaf9c19f79029809e23a353/"
