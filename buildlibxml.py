@@ -420,6 +420,11 @@ def build_libxml2xslt(download_dir, build_dir,
                      '--prefix=%s' % prefix,
                      ]
 
+    # JOV fPIC is required on OpenBSD
+    fpic_env = os.environ.copy()
+    fpic_env["CFLAGS"] = "-fPIC"
+    call_setup["env"] = fpic_env
+
     # build zlib
     zlib_configure_cmd = [
         './configure',
